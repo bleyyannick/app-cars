@@ -13,8 +13,16 @@ const carSlice = createSlice({
         addCar(state, action) {
             state.cars.push({
                 name: action.payload.name, 
-                cost: action.payload.cost
+                cost: action.payload.cost,
+                id: nanoid()
             })
+        }, 
+        removeCar(state, action) {
+           const updated = state.cars.filter(({id}) => id !== action.payload ); 
+           state.cars = updated; 
         }
     }
 })
+export const { changeSearchTerm,addCar, removeCar } = carSlice.actions; 
+
+export const carReducer = carSlice.reducer;
