@@ -7,8 +7,7 @@ function CarSearch() {
   const { searchTerm } = useSelector(state =>   ({ searchTerm: state.cars.searchTerm}))
   const handleSearchTermChange = (event) => {
     event.preventDefault(); 
-    dispatch(changeSearchTerm(event.target.value))
-      console.log(searchTerm); 
+    dispatch(changeSearchTerm(event.target.value)); 
   }
   return (
     <div className='list-header'>
@@ -25,4 +24,4 @@ function CarSearch() {
   )
 }
 
-export default CarSearch
+export default CarSearch; 
